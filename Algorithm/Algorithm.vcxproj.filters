@@ -15,82 +15,16 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="p 2020 kakao 괄호 변환.cpp">
+    <ClCompile Include="b 14503 로봇 청소기.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="p 기능개발.cpp">
+    <ClCompile Include="b 1057 토너먼트.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="p 주식가격.cpp">
+    <ClCompile Include="b 1021 회전하는 큐.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="p 탑.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="p 다리를 지나는 트럭.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="p 프린터.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="p 완주하지 못한 선수.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="p K번째수.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="p 모의고사.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="p 체육복.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="p 2016년.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="p 가운데 글자 가져오기.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="p 같은 숫자는 싫어.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="p 나누어 떨어지는 숫자 배열.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="p 두 정수 사이의 합.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="p 문자열 내 마음대로 정렬하기.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="p 문자열 내 p와 y의 개수.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="p 수박수박수박수박수박수.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="p 서울에서 김서방 찾기.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="p 문자열을 정수로 바꾸기.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="p 약수의 합.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="p 문자열 다루기 기본.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="p 문자열 내림차순으로 배치하기.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="p 시저 암호.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="p 소수 찾기.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="p 이상한 문자 만들기.cpp">
+    <ClCompile Include="b 14499 주사위 굴리기.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
