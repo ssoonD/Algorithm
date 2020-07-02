@@ -1,38 +1,30 @@
 #include <string>
 #include <vector>
 #include <iostream>
-#include <queue>
-using namespace std;
 
-int solution(int bridge_length, int weight, vector<int> truck_weights) {
-	int answer = 0;
-	int sum = 0, idx = 0;
-	queue<int> q;
-	while (1) {
-		answer++;
-		if (q.size() == bridge_length) {
-			sum -= q.front();
-			q.pop();
-		}
-		if (sum + truck_weights[idx] <= weight) {
-			if (idx == truck_weights.size() - 1) {
-				answer += bridge_length;
-				break;
+using namespace std;
+const int MAX = 10000000;
+bool check[MAX + 1]; // true: 지워짐, false: 지워지지 않음
+
+// 에라토스테네의 체
+void chk(int n) {
+	check[0] = check[1] = true;
+	for (int i = 2; i * i <= n; i++) {
+		if (check[i] == false) {
+			for (int j = i + i; j <= n; j += i) {
+				check[j] = true;
 			}
-			q.push(truck_weights[idx]);
-			sum += truck_weights[idx];
-			idx++;
-		}
-		else {
-			q.push(0);
 		}
 	}
+}
+
+int solution(int n) {
+	int answer = 0;
+	
 	return answer;
 }
 
 int main() {
-	int bridge_length = 2;
-	int weight = 10;
-	vector<int> truck_weights = { 7,4,5,6 };
-	cout << solution(bridge_length, weight, truck_weights) << '\n';
+	int n = 10;
+	cout << solution(n);
 }

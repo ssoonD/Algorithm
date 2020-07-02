@@ -1,30 +1,46 @@
 #include <string>
 #include <vector>
 #include <iostream>
+#include <algorithm>
 
 using namespace std;
-const int MAX = 1000000;
-bool check[MAX + 1]; // true: 지워짐, false: 지워지지 않음
 
-int solution(int n) {
+// 에라토스테네스의 체
+bool chk(int n) {
+	if (n < 2) return false;
+	for (int i = 2; i * i  <= n; i++) {
+		if (n % i == 0)return false;
+	}
+	return true;
+}
+
+int solution(string numbers) {
 	int answer = 0;
-	check[0] = check[1] = true;
-	for (int i = 2; i * i <= MAX; i++) {
-		if (check[i] == false) {
-			for (int j = i + i; j <= MAX; j += i) {
-				check[j] = true;
+	vector<int> num;
+	int nSize = numbers.size();
+	for (int i = 0; i < nSize; i++) {
+		num.push_back(numbers[i] - '0');
+	}
+	sort(num.begin(), num.end());
+	vector<int> ans;
+	do {
+		for (int i = 0; i <= num.size(); i++) {
+			int tmp = 0;
+			for (int j = 0; j < i; j++) {
+				tmp = (tmp * 10) + num[j];
+				ans.push_back(tmp);
 			}
 		}
-	}
-	for (int i = 2; i <= n; i++) {
-		if (check[i] == false) {
-			answer++;
-		}
+	} while (next_permutation(num.begin(), num.end()));
+	sort(ans.begin(), ans.end());
+	ans.erase(unique(ans.begin(), ans.end()), ans.end());
+	for (int i = 0; i < ans.size(); i++) {
+		if (chk(ans[i]))answer++;
 	}
 	return answer;
 }
 
 int main() {
-	int n = 10;
+	string n = "17";
 	cout << solution(n);
 }
