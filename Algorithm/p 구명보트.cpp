@@ -1,4 +1,3 @@
-#include <iostream>
 #include <string>
 #include <vector>
 #include <algorithm>
@@ -6,26 +5,16 @@
 using namespace std;
 
 int solution(vector<int> people, int limit) {
-	int answer = 1;
-	sort(people.begin(), people.end());
-	int pSize = people.size();
-	int sum = 0;
-	for (int i = 0; i < pSize; i++) {
-		sum += people[i];
-		if (sum == limit) {
-			answer++;
-			sum = 0;
-		}
-		else if (limit < sum) {
-			answer++;
-			sum = people[i];
-		}
-	}
-	return answer;
-}
+	int answer = 0;
+	int left_point = 0; int right_point = people.size() - 1;
+	sort(people.begin(), people.end(), greater<int>());
 
-int main() {
-	vector<int> p = { 70,50,80,50 };
-	int l = 100;
-	cout << solution(p, l) << '\n';
+	while (left_point < right_point + 1) {
+		if (people[left_point] + people[right_point] <= limit)
+			right_point--;
+		left_point++;
+		answer++;
+	}
+
+	return answer;
 }

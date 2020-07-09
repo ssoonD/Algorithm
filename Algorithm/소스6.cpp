@@ -1,30 +1,42 @@
-#include <string>
-#include <vector>
 #include <iostream>
+#include <vector>
+#include <algorithm>
+#include <set>
 
 using namespace std;
-const int MAX = 10000000;
-bool check[MAX + 1]; // true: 지워짐, false: 지워지지 않음
 
-// 에라토스테네의 체
-void chk(int n) {
-	check[0] = check[1] = true;
-	for (int i = 2; i * i <= n; i++) {
-		if (check[i] == false) {
-			for (int j = i + i; j <= n; j += i) {
-				check[j] = true;
-			}
-		}
-	}
+bool cmp(string s1, string s2) {
+	if (s1.size() == s2.size()) return s1 > s2;
+	return s1.size() > s2.size();
 }
 
-int solution(int n) {
-	int answer = 0;
-	
-	return answer;
+bool chk(vector<string> name, string n) {
+	for (int i = 0; i < name.size(); i++) {
+		string tmp = name[i];
+		if (tmp.find(n) != string::npos) {
+			return true;
+		}
+	}
+	return false;
+}
+
+bool solution(vector<string> n) {
+	sort(n.begin(), n.end(), cmp);
+	set<string> names;
+	vector<string> tmp;
+
+	for (int i = 0; i < n.size(); i++) {
+		if (names.find(n[i]) != names.end()) return true;
+		else {
+			if (chk(tmp, n[i])) return true;
+			names.insert(n[i]);
+			tmp.push_back(n[i]);
+		}
+	}
+	return false;
 }
 
 int main() {
-	int n = 10;
+	vector<string> n = { "우주","소우주야" };
 	cout << solution(n);
 }
