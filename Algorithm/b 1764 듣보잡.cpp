@@ -1,35 +1,29 @@
 #include <iostream>
-#include <map>
+#include <unordered_set>
+#include <vector>
+#include <cmath>
 #include <algorithm>
-#include <string>
 using namespace std;
 
 int main() {
 	ios_base::sync_with_stdio(false);
 	cin.tie(0); cout.tie(0);
 	int n, m; cin >> n >> m;
-	map<string, int> person;
-
+	vector<string> answer;
+	unordered_set<string> s;
 	for (int i = 0; i < n; i++) {
-		string name;
-		cin >> name;
-		person[name] += 1;
+		string tmp; cin >> tmp;
+		s.insert(tmp);
 	}
 	for (int i = 0; i < m; i++) {
-		string name;
-		cin >> name;
-		person[name] += 1;
-	}
-	int answer = 0;
-	for (auto a : person) {
-		if (a.second == 2) {
-			answer += 1;
+		string tmp; cin >> tmp;
+		if (s.find(tmp) != s.end()) {
+			answer.push_back(tmp);
 		}
 	}
-	cout << answer << '\n';
-	for (auto a : person) {
-		if (a.second == 2) {
-			cout << a.first << '\n';
-		}
+	sort(answer.begin(), answer.end());
+	cout << answer.size() << '\n';
+	for (auto a : answer) {
+		cout << a << '\n';
 	}
 }
